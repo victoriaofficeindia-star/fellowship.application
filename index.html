@@ -1,1 +1,595 @@
-# fellowship.application
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPW Fellowship Application Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f8f1e9;
+            background-image: 
+                url('https://www.transparenttextures.com/patterns/paper-fibers.png'),
+                linear-gradient(135deg, #fdfcfb 0%, #e6d7c4 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header {
+            position: relative;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            height: 60px;
+        }
+        
+        .company-info {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            text-align: right;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .contact {
+            text-align: center;
+            padding: 20px;
+            background: #f4e4d9;
+            font-size: 14px;
+        }
+        
+        .form-section {
+            padding: 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .last-section {
+            border-bottom: none;
+        }
+        
+        h3 {
+            color: #8B4513;
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #5a4a3e;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #D2691E;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .conditional {
+            display: none;
+            margin-top: 15px;
+            padding-left: 20px;
+            border-left: 3px solid #D2691E;
+        }
+        
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .row {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .logo, .company-info {
+                position: static;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            
+            .form-section {
+                padding: 20px;
+            }
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #D2691E 0%, #8B4513 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .resume-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="logo.png" alt="VPW Logo" class="logo">
+            <div class="company-info">
+                VPW LLP<br>
+                Formerly Victoria Paradise Advisor LLP<br>
+                LLPIN: ACS 3188<br>
+                Regd Office: Siliguri, WB.
+            </div>
+            <h1 class="title">VPW FELLOWSHIP APPLICATION FORM</h1>
+            <p class="subtitle">(Victoria Paradise Wealth Fellowship Program)</p>
+        </header>
+        
+        <div class="contact">
+            Fellowship Coordinator: <strong>091 8967707315 / 9699481278</strong>
+        </div>
+        
+        <form action="https://formspree.io/f/mdawjgwj" method="POST">
+            
+            <!-- Section 1: Basic Information -->
+            <section class="form-section">
+                <h3>🔹 Section 1: Basic Information</h3>
+                <div class="row">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="full_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth *</label>
+                        <input type="date" name="dob" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label>Gender *</label>
+                        <select name="gender" required>
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number *</label>
+                        <input type="tel" name="mobile" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Current City & State *</label>
+                        <input type="text" name="location" placeholder="e.g., Kolkata, West Bengal" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label>LinkedIn Profile (optional but preferred)</label>
+                        <input type="url" name="linkedin">
+                    </div>
+                    <div class="form-group">
+                        <label>Instagram / Twitter (optional)</label>
+                        <input type="url" name="social">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 2: Academic & Professional Background -->
+            <section class="form-section">
+                <h3>🔹 Section 2: Academic & Professional Background</h3>
+                <div class="row">
+                    <div class="form-group">
+                        <label>Current Status *</label>
+                        <select name="current_status" required>
+                            <option value="">Select</option>
+                            <option value="Student (already selected)">Student (already selected)</option>
+                            <option value="Working Professional">Working Professional</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Highest Qualification *</label>
+                        <select name="qualification" required>
+                            <option value="">Select</option>
+                            <option value="10th">10th</option>
+                            <option value="12th">12th</option>
+                            <option value="Graduation">Graduation</option>
+                            <option value="Post Graduation">Post Graduation</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label>Field of Study *</label>
+                        <input type="text" name="field_of_study" required>
+                    </div>
+                    <div class="form-group">
+                        <label>College / University / Organization Name *</label>
+                        <input type="text" name="institution" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label>Academic Performance (% / CGPA) *</label>
+                        <input type="text" name="performance" placeholder="e.g., 8.5 CGPA or 85%" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Any Certifications (Finance / Tech / Business / AI / Others)</label>
+                        <input type="text" name="certifications" placeholder="List separated by commas">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 3: Skills & Expertise -->
+            <section class="form-section">
+                <h3>🔹 Section 3: Skills & Expertise</h3>
+                <div class="form-group">
+                    <label>Select your strong areas (multi-select):</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item"><input type="checkbox" name="skills[]" value="Business Strategy"> Business Strategy</div>
+                        <div class="checkbox-item"><input type="checkbox" name="skills[]" value="Marketing & Branding"> Marketing & Branding</div>
+                        <div class="checkbox-item"><input type="checkbox" name="skills[]" value="Content Creation"> Content Creation</div>
+                        <div class="checkbox-item"><input type="checkbox" name="skills[]" value="Sales & Communication"> Sales & Communication</div>
+                        <div class="checkbox-item"><input type="checkbox" name="skills[]" value="Research & Analytics"> Research & Analytics</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label>Analytical Thinking (1-10) *</label>
+                        <select name="analytical" required>
+                            <option value="">Rate</option>
+                            <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                            <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                            <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Communication Skills (1-10) *</label>
+                        <select name="communication" required>
+                            <option value="">Rate</option>
+                            <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                            <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                            <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label>Leadership (1-10) *</label>
+                        <select name="leadership" required><!-- Same 1-10 options --></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Discipline (1-10) *</label>
+                        <select name="discipline" required><!-- Same 1-10 options --></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Risk-taking Ability (1-10) *</label>
+                    <select name="risk_taking" required><!-- Same 1-10 options --></select>
+                </div>
+            </section>
+            
+            <!-- Section 4: Experience & Work -->
+            <section class="form-section">
+                <h3>🔹 Section 4: Experience & Work</h3>
+                <div class="form-group">
+                    <label>Have you worked before? *</label>
+                    <div class="radio-group">
+                        <div class="radio-item"><input type="radio" name="worked_before" value="Yes" required> Yes</div>
+                        <div class="radio-item"><input type="radio" name="worked_before" value="No" required> No</div>
+                    </div>
+                </div>
+                <div class="conditional" id="work-details">
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Role / Position</label>
+                            <input type="text" name="role">
+                        </div>
+                        <div class="form-group">
+                            <label>Organization Name</label>
+                            <input type="text" name="org_name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <input type="text" name="duration" placeholder="e.g., 6 months">
+                    </div>
+                    <div class="form-group">
+                        <label>Key Achievements</label>
+                        <textarea name="achievements" rows="3"></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 5: Financial Awareness -->
+            <section class="form-section">
+                <h3>🔹 Section 5: Financial Awareness (Core VPW Filter)</h3>
+                <div class="form-group">
+                    <label>What is your understanding of wealth? (100–200 words) *</label>
+                    <textarea name="wealth_understanding" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Do you invest? *</label>
+                    <div class="radio-group">
+                        <div class="radio-item"><input type="radio" name="invest" value="Yes" required> Yes</div>
+                        <div class="radio-item"><input type="radio" name="invest" value="No" required> No</div>
+                    </div>
+                </div>
+                <div class="conditional" id="invest-details">
+                    <div class="form-group">
+                        <label>Where do you invest? (multi-select)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item"><input type="checkbox" name="invest_where[]" value="Stocks"> Stocks</div>
+                            <div class="checkbox-item"><input type="checkbox" name="invest_where[]" value="Crypto"> Crypto</div>
+                            <div class="checkbox-item"><input type="checkbox" name="invest_where[]" value="Gold"> Gold</div>
+                            <div class="checkbox-item"><input type="checkbox" name="invest_where[]" value="Mutual Funds"> Mutual Funds</div>
+                            <div class="checkbox-item"><input type="checkbox" name="invest_where[]" value="Others"> Others</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Explain one investment decision you made and why *</label>
+                        <textarea name="investment_decision" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>What do you think about India's financial future in next 10 years? *</label>
+                        <textarea name="india_future" required></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 6: Mindset & Psychology -->
+            <section class="form-section">
+                <h3>🔹 Section 6: Mindset & Psychology (Elite Filter)</h3>
+                <div class="form-group">
+                    <label>Why do you want to join VPW Fellowship? *</label>
+                    <textarea name="why_vpw" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>What makes you different from 1000 other applicants? *</label>
+                    <textarea name="unique" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Describe a situation where you took a bold or risky decision *</label>
+                    <textarea name="risky_decision" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>What is your long-term goal (10–15 years vision)? *</label>
+                    <textarea name="long_term_goal" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Do you believe in power, influence, or stability? Why? *</label>
+                    <textarea name="belief" required></textarea>
+                </div>
+            </section>
+            
+            <!-- Section 7: Strategic Thinking -->
+            <section class="form-section">
+                <h3>🔹 Section 7: Strategic Thinking (Very Important)</h3>
+                <div class="form-group">
+                    <label>If you had ₹1,00,000 today, how would you grow it to ₹10,00,000? *</label>
+                    <textarea name="grow_money" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>How would you attract high-net-worth clients to a platform like VPW? *</label>
+                    <textarea name="attract_clients" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>What would you improve in India's current financial ecosystem? *</label>
+                    <textarea name="improve_ecosystem" required></textarea>
+                </div>
+            </section>
+            
+            <!-- Section 8: Work Commitment -->
+            <section class="form-section">
+                <h3>🔹 Section 8: Work Commitment</h3>
+                <div class="form-group">
+                    <label>Are you willing to commit 30–40 hrs/week? *</label>
+                    <div class="radio-group">
+                        <div class="radio-item"><input type="radio" name="commitment" value="Yes" required> Yes</div>
+                        <div class="radio-item"><input type="radio" name="commitment" value="No" required> No</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Role *</label>
+                    <select name="preferred_role" required>
+                        <option value="">Select</option>
+                        <option value="Research Analyst">Research Analyst</option>
+                        <option value="Marketing & Growth">Marketing & Growth</option>
+                        <option value="Business Management">Business Management</option>
+                        <option value="Client Relations">Client Relations</option>
+                    </select>
+                </div>
+            </section>
+            
+            <!-- Section 9: Integrity & Alignment -->
+            <section class="form-section">
+                <h3>🔹 Section 9: Integrity & Alignment</h3>
+                <div class="form-group">
+                    <label>Have you ever handled money, clients, or responsibility? *</label>
+                    <div class="radio-group">
+                        <div class="radio-item"><input type="radio" name="handled_responsibility" value="Yes" required> Yes</div>
+                        <div class="radio-item"><input type="radio" name="handled_responsibility" value="No" required> No</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Would you prioritize VPW over other opportunities if selected? *</label>
+                    <div class="radio-group">
+                        <div class="radio-item"><input type="radio" name="prioritize" value="Yes" required> Yes</div>
+                        <div class="radio-item"><input type="radio" name="prioritize" value="No"> No</div>
+                        <div class="radio-item"><input type="radio" name="prioritize" value="Depends"> Depends (Explain below)</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Explanation for prioritization (if Depends)</label>
+                    <textarea name="prioritize_explain"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Any conflicts of interest? (Other startups / jobs / partnerships)</label>
+                    <textarea name="conflicts"></textarea>
+                </div>
+            </section>
+            
+            <!-- Section 10: Short Note -->
+            <section class="form-section last-section">
+                <h3>🔹 Section 10: Final Note</h3>
+                <div class="resume-note">
+                    <strong>Optional but preferred:</strong> Send your resume to <a href="mailto:victoriaoffice.india@gmail.com">victoriaoffice.india@gmail.com</a>
+                </div>
+                <div class="form-group">
+                    <label>👉 "Why should VPW trust you?" *</label>
+                    <textarea name="why_trust" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>"Final Challenge Question" 👉 If VPW becomes India's most powerful wealth platform, what role will you play in that journey? *</label>
+                    <textarea name="final_role" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </section>
+        </form>
+    </div>
+
+    <script>
+        // Conditional fields logic
+        const radios = document.querySelectorAll('input[type="radio"]');
+        radios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                const name = this.name;
+                const value = this.value;
+                const conditional = document.getElementById(name === 'worked_before' ? 'work-details' : 'invest-details');
+                
+                if (conditional) {
+                    conditional.style.display = value === 'Yes' ? 'block' : 'none';
+                    // Clear conditional fields if hidden
+                    if (value !== 'Yes') {
+                        conditional.querySelectorAll('input, textarea, select').forEach(field => {
+                            field.value = '';
+                        });
+                    }
+                }
+            });
+        });
+
+        // Copy 1-10 options to selects
+        const ratingSelects = document.querySelectorAll('select[name="analytical"], select[name="communication"], select[name="leadership"], select[name="discipline"], select[name="risk_taking"]');
+        ratingSelects.forEach(select => {
+            if (select.innerHTML === '<option value="">Rate</option>') {
+                for (let i = 1; i <= 10; i++) {
+                    select.innerHTML += `<option value="${i}">${i}</option>`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
